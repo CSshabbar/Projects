@@ -1,0 +1,567 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --bg-color: #121212;
+    --card-bg-color: #1E1E1E;
+    --text-color: #FFFFFF;
+    --accent-color: #8A2BE2;
+    --secondary-color: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+.card {
+    background-color: var(--card-bg-color);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-card {
+    display: flex;
+    align-items: center;
+}
+
+.main-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.main-card-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    margin-right: 500px;
+}
+
+.tag {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    margin-right: 10px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.small-card {
+    text-align: center;
+}
+
+.small-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.icon-grid {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.icon-grid img {
+    width: 30px;
+    height: 30px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .main-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-card img {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+/* Code Box Style */
+/* General styles for the code box */
+.code-box {
+    background-color: #1e1e3f; /* Dark purple-blue background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace; /* Code-like font */
+    color: #ffffff; /* Default white text */
+    width: 500px; /* Set a fixed width */
+    height: 300px; /* Set a fixed height */
+    margin: auto;
+    position: relative;
+    overflow-y: auto; /* Allow vertical scrolling when content overflows */
+}
+
+/* Code specific styles */
+code {
+    display: block;
+    white-space: pre; /* Keep the code formatting */
+    line-height: 1.5; /* Increase line spacing for readability */
+}
+
+/* Add a header for the code window style */
+.code-box::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 20px;
+    height: 12px;
+    width: 12px;
+    background-color: #ff5f56; /* Close button color */
+    border-radius: 50%;
+}
+
+.code-box::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    height: 12px;
+    width: 12px;
+    background-color: #ffbd2e; /* Minimize button color */
+    border-radius: 50%;
+}
+
+/* Syntax Highlighting Colors */
+.keyword {
+    color: #f92672; /* Pinkish color for keywords */
+}
+
+.string {
+    color: #ffae00; /* Yellowish color for strings */
+}
+
+.property {
+    color: #4a92ff; /* Light blue for object properties */
+}
+
+.function {
+    color: #a6e22e; /* Green for function names */
+}
+
+.comment {
+    color: #75715e; /* Grey for comments */
+}
+
+.number {
+    color: #ae81ff; /* Purple for numbers */
+}
+
+/* General Button Styles */
+.btn {
+    background-color: transparent;
+    color: #000000;
+    border: 2px solid var(--accent-color);
+    border-radius: 25px;
+    padding: 10px 25px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--accent-color);
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.btn:hover {
+    background-color: #ffffff; /* Slightly different shade on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+/* Specific Styles for Contact and Resume Buttons */
+.btn-contact {
+    background-color: var(--accent-color); /* Accent color for Contact Me button */
+    color: #000000; /* Black text for Contact Me button */
+}
+
+.btn-contact:hover {
+    background-color: #000000; /* Accent color for Get Resume button */
+    color: var(--accent-color); /* Darker green on hover */
+}
+
+.btn-resume {
+    background-color: #000000; /* Accent color for Get Resume button */
+    color: var(--accent-color); /* Black text for Get Resume button */
+}
+
+.btn-resume:hover {
+    background-color: var(--accent-color); /* Black background on hover */
+    color: #000000; /* Accent color text on hover */
+}
+
+
+/* About section styles */
+#about {
+    padding: 50px 0;
+}
+
+.about-container {
+    display: flex;
+    background-color: var(--card-bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    animation: fade-in 0.5s ease-out;
+}
+
+/* Add glowing effect */
+/* About section styles */
+#about {
+    padding: 50px 0;
+}
+
+.about-container {
+    display: flex;
+    background-color: var(--card-bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    animation: fade-in 0.5s ease-out;
+    z-index: 1;
+}
+
+/* Glowing effect */
+.about-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    z-index: -1;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 1), 0 0 40px rgba(0, 255, 255, 0.8), 0 0 60px rgba(0, 255, 255, 0.6); /* More intense glow */
+    transition: box-shadow 0.8s ease;
+}
+
+.about-container:hover::before {
+    box-shadow: 0 0 40px rgba(0, 255, 255, 1), 0 0 80px rgba(0, 255, 255, 0.8), 0 0 100px rgba(0, 255, 255, 0.6); /* Stronger glow on hover */
+}
+
+.about-content {
+    flex: 1;
+    padding: 30px;
+}
+
+.about-content h2 {
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.about-image {
+    flex: 0 0 300px;
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-image {
+        flex: 0 0 auto;
+        height: 300px;
+    }
+}
+
+/* Animation */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Updated CSS for the Projects section with hover reveal and delayed compression */
+.project-card {
+    background-color: var(--card-bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.8s ease, box-shadow 0.8s ease-in-out, height 1.2s ease-in-out;
+    position: relative;
+    height: 200px; /* Set initial fixed height */
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    height: auto; /* Expands height on hover */
+}
+
+.project-card:not(:hover) {
+    transition: all 0.7s ease; /* Adds delay for compression */
+}
+
+.project-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease, opacity 0.8s ease;
+    opacity: 0;
+}
+
+.project-card:hover .project-details {
+    max-height: 1000px; /* Expands to fit content */
+    opacity: 1;
+}
+
+.project-card:not(:hover) .project-details {
+    transition: all 0.7s ease;
+}
+
+/* ... (previous styles remain the same) ... */
+
+#skills {
+    padding: 50px 0;
+    text-align: center; /* Center-align the entire section */
+  }
+  
+  #skills {
+    padding: 50px 0;
+    text-align: left; /* Align the heading and section text */
+  }
+  
+  #skills {
+    padding: 50px 0;
+    text-align: left; /* Align the heading and section text */
+  }
+  
+  #skills h2 {
+    margin-bottom: 30px; /* Add some space below the heading */
+  }
+  
+  .skills-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align skill boxes to the left */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .skill-category {
+    background-color: var(--card-bg-color);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: left;
+    width: 100%; /* Set width to occupy the full container on hover */
+  }
+  
+  .skill-category h3 {
+    color: var(--accent-color);
+    margin-bottom: 0;
+    font-size: 1.2em;
+    transition: all 0.5s ease;
+  }
+  
+  .skill-details {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 1s ease;
+  }
+  
+  .skill-category:hover {
+    transform: translateX(20px);
+    width: calc(100% + 100px); /* Expands width on hover */
+  }
+  
+  .skill-category:not(:hover) {
+    transition: all 1.5s ease; /* Slowed down retraction */
+  }
+  
+  .skill-category:hover h3 {
+    margin-bottom: 10px;
+  }
+  
+  .skill-category:hover .skill-details {
+    max-height: 1000px;
+    opacity: 1;
+  }
+  
+  .skill-category:not(:hover) .skill-details {
+    transition: all 0.7s ease; /* Slowed down retraction */
+  }
+  
+  .skill-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+  
+  .skill-list li {
+    margin-bottom: 5px;
+    font-size: 0.9em;
+  }
+  
+  /* Add glow effect */
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 5px var(--accent-color);
+    }
+    50% {
+      box-shadow: 0 0 20px var(--accent-color), 0 0 30px var(--accent-color);
+    }
+    100% {
+      box-shadow: 0 0 5px var(--accent-color);
+    }
+  }
+  
+  .skill-category:hover {
+    animation: glow 2s infinite;
+  }
+  
+  /* Slow retraction */
+  .skill-category {
+    transition: all 0.5s ease;
+  }
+  
+  .skill-category:not(:hover) {
+    transition: all 1s ease;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .skills-container {
+      max-width: 100%;
+      flex-direction: column; /* Stack skill boxes vertically on smaller screens */
+    }
+  
+    .skill-category:hover {
+      transform: none;
+      width: 100%;
+    }
+  }
+  
+  .social-icons {
+    display: flex;
+    align-items: center;
+}
+
+.social-icons a {
+    color: var(--text-color);
+    font-size: 1.5em;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--accent-color);
+}
